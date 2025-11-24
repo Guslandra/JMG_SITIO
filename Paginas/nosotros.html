@@ -102,5 +102,20 @@ window.addEventListener("scroll", () => {
 });
 </script>
 
+<script>
+  // Animación fade-in para elementos con la clase .fade-in-up
+  (function(){
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('show');
+          obs.unobserve(e.target);
+        }
+      });
+    },{threshold:0.12});
+    document.querySelectorAll('.fade-in-up').forEach(el=>obs.observe(el));
+  })();
+</script>
+
 </body>
 </html>
