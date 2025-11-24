@@ -1,0 +1,342 @@
+/* ============================
+   VARIABLES GLOBALES
+=============================== */
+:root{
+  --bg: #0f1724;
+  --card: #0b1220;
+  --muted: #94a3b8;
+  --text: #e6eef8;
+
+  --accent-blue: #00b4d8;
+  --accent-orange: #f97316; /* NUEVO - color corporativo */
+
+  --glass: rgba(255,255,255,0.06);
+  --radius: 14px;
+  --max-width: 1200px;
+
+  --fw-heading: 700;
+  --fw-body: 400;
+}
+
+/* RESET */
+*{ box-sizing:border-box; margin:0; padding:0 }
+html,body{ height:100% }
+body{
+  font-family:"Montserrat", system-ui, Arial;
+  background: linear-gradient(180deg, var(--bg), #071025);
+  color:var(--text);
+  line-height:1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================
+   CONTENEDORES
+=============================== */
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:1rem;
+}
+
+.container-section{
+  padding:3rem 1rem;
+}
+
+/* ============================
+   HEADER / NAV
+=============================== */
+
+header{
+  padding:0.8rem 1rem;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  transition:transform .35s ease, background .35s ease;
+}
+
+/* Fondo transparente al hacer scroll */
+header.scrolled{
+  background: rgba(15,23,36,0.55);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+/* Marca */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+}
+.logo-img{
+  height:50px;
+}
+
+/* NAV general */
+.nav{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+
+/* NAV escritorio */
+.nav-menu{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  list-style:none;
+}
+
+.nav-menu a{
+  color:var(--muted);
+  text-decoration:none;
+  padding:.45rem .7rem;
+  border-radius:10px;
+  transition:.25s ease;
+  font-weight:500;
+}
+
+.nav-menu a:hover{
+  background:rgba(255,255,255,0.05);
+  color:white;
+}
+
+/* Botón contacto */
+.nav-menu a.cta{
+  background: var(--accent-orange);
+  color:#021626;
+  font-weight:700;
+}
+
+.nav-menu a.cta:hover{
+  filter:brightness(1.1);
+}
+
+/* NAV móvil */
+.nav-toggle{
+  display:none;
+  cursor:pointer;
+  font-size:1.6rem;
+  color:white;
+}
+
+/* Botón cerrar menú móvil (invisible en escritorio) */
+.nav-close{ display:none }
+.nav-close-btn{
+  background:transparent;
+  border:none;
+  color:var(--text);
+  font-size:1.6rem;
+  padding:.35rem .5rem;
+  cursor:pointer;
+}
+
+#check{ display:none }
+
+/* Responsive nav */
+@media (max-width:800px){
+  .nav-menu{
+    position:fixed;
+    top:0;
+    right:-100%;
+    flex-direction:column;
+    background:#0f1724;
+    padding:4rem 2rem;
+    height:100vh;
+    width:70%;
+    transition:right .35s ease;
+  }
+
+  .nav-close{ display:flex; justify-content:flex-end; }
+
+  .nav-close-btn{ color:var(--text); }
+
+  #check:checked ~ .nav-menu{
+    right:0;
+  }
+
+  .nav-toggle{
+    display:block;
+  }
+}
+
+/* ============================
+   BANNER
+=============================== */
+.banner{
+  min-height:60vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(0deg, rgba(7,16,37,.55), rgba(7,16,37,.55)),
+              url("../Imagenes/topography-813844_1920.jpg") center/cover no-repeat;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.banner h1{
+  font-size:clamp(2.3rem,10vw,4.8rem);
+  letter-spacing:0.04em;
+  text-shadow:0 4px 18px rgba(0,0,0,0.5);
+  color: #f97316;
+}
+
+/* ============================
+   TITULOS DE SECCION
+=============================== */
+.section-title{
+  text-align:center;
+  margin-bottom:2rem;
+  font-weight:var(--fw-heading);
+  font-size:2rem;
+  color:white;
+}
+
+/* ============================
+   CARDS DE SERVICIOS
+=============================== */
+.row-cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:1.25rem;
+}
+
+.card-modern{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.04);
+  border-radius:var(--radius);
+  padding:1.5rem;
+  text-align:center;
+  box-shadow:0 6px 20px rgba(2,6,23,0.5);
+  transition:transform .4s cubic-bezier(.2,.9,.3,1), box-shadow .3s ease;
+  backdrop-filter:blur(6px);
+}
+.card-modern:hover{
+  transform: translateY(-6px);
+  box-shadow:0 20px 40px rgba(2,6,23,0.7);
+}
+
+.card-modern img{
+  width:80px;
+  margin-bottom:1rem;
+}
+
+/* ============================
+   EQUIPAMIENTO
+=============================== */
+.equip-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1rem;
+}
+
+.equi-item img{
+  width:100%;
+  border-radius:12px;
+}
+
+/* ============================
+   FORMULARIO CONTACTO
+=============================== */
+.contact-wrap{
+  max-width:900px;
+  margin:0 auto;
+  padding:1rem;
+}
+
+.contact-card{
+  background:var(--card);
+  padding:1.25rem;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 300px;
+  gap:1rem;
+}
+@media(max-width:900px){
+  .contact-grid{ grid-template-columns:1fr }
+}
+
+/* Inputs */
+.form-control{
+  width:100%;
+  padding:.7rem .9rem;
+  background:transparent;
+  color:var(--text);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;
+  margin-top:.4rem;
+  transition:border .25s ease, box-shadow .25s ease;
+}
+.form-control:focus{
+  outline:none;
+  border-color:var(--accent-orange);
+  box-shadow:0 6px 20px rgba(249,115,22,0.2);
+}
+
+/* Botones */
+.btn-accent{
+  background: linear-gradient(90deg, var(--accent-orange), var(--accent-blue));
+  border:none;
+  padding:.65rem 1rem;
+  color:#021026;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+}
+.btn-accent:hover{
+  filter:brightness(1.1);
+}
+
+.btn-glass{
+  background:var(--glass);
+  border:1px solid rgba(255,255,255,0.15);
+  padding:.6rem 1rem;
+  border-radius:10px;
+  cursor:pointer;
+  color:white;
+}
+
+/* Redes */
+.social-list{
+  display:flex;
+  gap:.75rem;
+  justify-content:center;
+}
+.social-list a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  background:var(--glass);
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.05);
+  transition:.25s ease;
+}
+.social-list a:hover{
+  background:rgba(249,115,22,0.3);
+}
+
+/* ============================
+   FOOTER
+=============================== */
+footer{
+  padding:1.5rem;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+
+/* ============================
+   ANIMACIÓN FADE-IN
+=============================== */
+.fade-in-up{
+  opacity:0;
+  transform:translateY(12px);
+  transition:opacity .7s ease, transform .7s cubic-bezier(.2,.9,.3,1);
+}
+.fade-in-up.show{
+  opacity:1;
+  transform:none;
+}

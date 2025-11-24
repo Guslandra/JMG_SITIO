@@ -1,0 +1,326 @@
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JMG Topografía — Servicios Profesionales</title>
+
+    <meta name="description" content="JMG - Servicios de topografía, aerofotogrametría y obras civiles en San Juan (Argentina).">
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Iconos -->
+    <script src="https://kit.fontawesome.com/2dbc638b63.js" crossorigin="anonymous" defer></script>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="CSS/estilos.css">
+  </head>
+
+  <body>
+
+    <!-- HEADER / NAV -->
+    <header id="site-header" class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        
+        <!-- LOGO -->
+        <div class="brand">
+          <img src="Imagenes/JMG-ISOLOGO trans.png" class="logo-img" alt="JMG logo">
+          <strong>TOPOGRAFIA INTEGRAL & CONSTRUCCIÓN</strong>
+        </div>
+
+        <!-- NAV -->
+        <nav class="nav" aria-label="Navegación principal">
+
+          <input type="checkbox" id="check">
+          <label for="check" class="nav-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </label>
+
+          <ul class="nav-menu">
+            <li class="nav-close"><button class="nav-close-btn" aria-label="Cerrar menú">×</button></li>
+            <li><a href="#" class="">Inicio</a></li>
+            <li><a href="Paginas/nosotros.html">Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#equipos">Equipos</a></li>
+            <li><a href="#contacto" class="cta">Contacto</a></li>
+          </ul>
+
+        </nav>
+      </div>
+    </header>
+
+    <!-- BANNER -->
+    <main>
+
+      <section class="banner">
+        <h1>JMG</h1>
+      </section>
+
+      <!-- SERVICIOS -->
+      <section id="servicios" class="container-section fade-in-up">
+        <div class="container">
+          <h2 class="section-title">SERVICIOS</h2>
+
+          <div class="row-cards">
+
+            <div class="card-modern">
+              <img src="Iconos/Relev Top.png" alt="Topografía">
+              <h4>Topografía</h4>
+              <p class="small">Levantamientos precisos urbanos y rurales.</p>
+            </div>
+
+            <div class="card-modern">
+              <img src="Iconos/Fotogrametria.png" alt="Aerofotogrametría">
+              <h4>Aerofotogrametría</h4>
+              <p class="small">Modelos digitales y cartografía con drones RTK.</p>
+            </div>
+
+            <div class="card-modern">
+              <img src="Iconos/Obra Civil.png" alt="Obra Civil">
+              <h4>Obra Civil</h4>
+              <p class="small">Replanteos, cálculos de volúmenes y supervisión.</p>
+            </div>
+
+            <div class="card-modern">
+              <img src="Iconos/Mineria.png" alt="Minería">
+              <h4>Minería</h4>
+              <p class="small">Soporte topográfico para minería.</p>
+            </div>
+
+            <div class="card-modern">
+              <img src="Iconos/Energetica.png" alt="Energía">
+              <h4>Energía</h4>
+              <p class="small">Servicios para parques eólicos y fotovoltaicos.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- EQUIPOS -->
+      <section id="equipos" class="container-section fade-in-up">
+        <div class="container">
+          <h2 class="section-title">EQUIPAMIENTO</h2>
+
+          <div class="equip-grid">
+
+            <div class="card-modern equi-item">
+              <img src="Imagenes/Trimble M3.jpg" alt="Trimble M3">
+              <h4>Trimble M3</h4>
+            </div>
+
+            <div class="card-modern equi-item">
+              <img src="Imagenes/SPECTRA-PRECISION-RTKGPS-SP-60-2.jpg" alt="Spectra GPS">
+              <h4>GPS Spectra</h4>
+            </div>
+
+            <div class="card-modern equi-item">
+              <img src="Imagenes/P4RTK-DRTK2.fw_.jpg" alt="Phantom 4 RTK">
+              <h4>Phantom 4 RTK</h4>
+            </div>
+
+            <div class="card-modern equi-item">
+              <img src="Imagenes/Dron ebe.jpg" alt="eBee X">
+              <h4>eBee X</h4>
+            </div>
+
+            <div class="card-modern equi-item">
+              <img src="Imagenes/Nivel Automatico AC2S Nikon.jpg" alt="Nivel Nikon">
+              <h4>Nivel Nikon</h4>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section id="contacto" class="container fade-in-up">
+        <div class="container">
+          <h2 class="section-title">CONTACTO</h2>
+
+          <div class="contact-wrap">
+
+            <form class="contact-card" action="contacto/handler.php" method="POST" novalidate>
+
+              <div class="contact-grid">
+
+                <div>
+                  <label class="small">Nombre</label>
+                  <input name="name" class="form-control" required>
+
+                  <label class="small" style="margin-top:.6rem">Email</label>
+                  <input name="email" type="email" class="form-control" required>
+
+                  <label class="small" style="margin-top:.6rem">Asunto</label>
+                  <input name="subject" class="form-control" required>
+
+                  <label class="small" style="margin-top:.6rem">Mensaje</label>
+                  <textarea name="message" rows="6" class="form-control" required></textarea>
+
+                  <input type="text" name="website" style="display:none">
+
+                  <div style="margin-top:1rem;display:flex;gap:8px">
+                    <button type="submit" class="btn-accent">Enviar</button>
+                    <button type="reset" class="btn-glass">Limpiar</button>
+                  </div>
+                </div>
+
+                <aside class="small center">
+                  <h5>Contacto directo</h5>
+                  <p><strong>Tel:</strong> +54 9 264 5810540</p>
+                  <p><strong>Email:</strong> info@jmgtopografia.com</p>
+
+                  <div class="social-list" style="margin-top:12px">
+                    <a href="mailto:info@jmgtopografia.com">
+                      <img src="Iconos/envelope-regular-full.svg" alt="email" style="height:22px">
+                    </a>
+                    <a href="https://www.linkedin.com/company/jmgservtopo/">
+                      <img src="Iconos/linkedin.svg" alt="linkedin" style="height:22px">
+                    </a>
+                    <a href="https://www.instagram.com/jmgtopografia/">
+                      <img src="Iconos/instagram.svg" alt="instagram" style="height:22px">
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=5492645810540">
+                      <img src="Iconos/whatsapp-logo.svg" alt="whatsapp" style="height:22px">
+                    </a>
+                  </div>
+                </aside>
+
+              </div>
+            </form>
+
+            <!-- MAPA -->
+            <div style="margin-top:1rem">
+              <div style="aspect-ratio:16/9">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d849.9962990688823!2d-68.55557895597288!3d-31.552020882542255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x968141001bc1d49f%3A0xc3de89cfdd301ccd!2sJMG%20ServTopo!5e0!3m2!1ses-419!2sar!4v1705854670609!5m2!1ses-419!2sar"
+                        style="border:0;width:100%;height:100%" allowfullscreen loading="lazy"></iframe>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>JMG Servicios Topografía - Argentina</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Nav transparente al hacer scroll
+      (function(){
+        const header = document.getElementById('site-header');
+        const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+      })();
+
+      // Animación fade-in
+      (function(){
+        const obs = new IntersectionObserver((entries)=>{
+          entries.forEach(e=>{
+            if(e.isIntersecting){
+              e.target.classList.add('show');
+              obs.unobserve(e.target);
+            }
+          });
+        },{threshold:0.12});
+        document.querySelectorAll('.fade-in-up').forEach(el=>obs.observe(el));
+      })();
+
+      // Envío AJAX del formulario
+      document.addEventListener('submit', function(e){
+        const form = e.target;
+        if(form.matches('.contact-card')){
+          e.preventDefault();
+          const data = new FormData(form);
+          fetch(form.action, {method:'POST', body:data})
+            .then(r=>r.json())
+            .then(j=>{
+              if(j.ok){
+                alert('Mensaje enviado. ¡Gracias!');
+                form.reset();
+              } else {
+                alert('Error: ' + (j.errors ? j.errors.join('\\n') : 'Error inesperado'));
+              }
+            })
+            .catch(()=>alert('Error de red. Intenta más tarde.'));
+        }
+      });
+        // Ocultar header al llegar al contacto
+        (function(){
+          const header = document.querySelector("header");
+          const contacto = document.querySelector("#contacto");
+
+          const obsContacto = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                // Cuando el contacto está a la vista → ocultar
+                header.style.transform = "translateY(-100%)";
+              } else {
+                // Cuando NO está → mostrar
+                header.style.transform = "translateY(0)";
+              }
+            });
+          }, {
+            threshold: 0.2  // porcentaje visible para activar
+          });
+
+          obsContacto.observe(contacto);
+      
+              // Cerrar menú móvil automáticamente
+              (function(){
+                const checkbox = document.getElementById('check');
+                const navMenu = document.querySelector('.nav-menu');
+                const navToggleLabel = document.querySelector('.nav-toggle');
+                if(!checkbox || !navMenu) return;
+
+                        // Al click en cualquier enlace del menú, cerrar (si está en modo móvil)
+                        document.querySelectorAll('.nav-menu a').forEach(a=>{
+                          a.addEventListener('click', ()=>{
+                            // solo cerrar si el toggle está visible (modo móvil)
+                            if (navToggleLabel && window.getComputedStyle(navToggleLabel).display !== 'none') {
+                              checkbox.checked = false;
+                            }
+                          });
+                        });
+
+                        // Botón de cierre visible dentro del menú móvil
+                        const closeBtn = document.querySelector('.nav-close-btn');
+                        if (closeBtn) {
+                          closeBtn.addEventListener('click', () => { checkbox.checked = false; });
+                        }
+
+                // Cerrar si se hace click/tap fuera del menú cuando está abierto
+                // Añadimos una ventana temporal para ignorar clicks que ocurran
+                // inmediatamente después de tocar la hamburguesa (problema en Chrome/touch)
+                let lastToggleTime = 0;
+                if (navToggleLabel) {
+                  navToggleLabel.addEventListener('click', () => { lastToggleTime = Date.now(); });
+                }
+                document.addEventListener('click', (e) => {
+                  if (!checkbox.checked) return;
+                  const now = Date.now();
+                  // Ignorar clicks dentro de 250ms desde el toggle (evita cierre inmediato)
+                  if (now - lastToggleTime < 250) return;
+                  const target = e.target;
+                  // Si el click fue dentro del menú o sobre el toggle, no cerramos
+                  if (navMenu.contains(target) || (navToggleLabel && navToggleLabel.contains(target))) return;
+                  checkbox.checked = false;
+                }, { passive: true });
+
+                // Asegurar menú cerrado al redimensionar (evita estados inconsistentes)
+                window.addEventListener('resize', () => { checkbox.checked = false; });
+              })();
+        })();
+    </script>
+
+  </body>
+</html>
