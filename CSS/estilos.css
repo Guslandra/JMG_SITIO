@@ -207,6 +207,27 @@ header.scrolled{
   padding:2rem 1rem;
 }
 
+/* Botón grande de reproducción (fallback cuando autoplay está bloqueado) */
+.banner-play{
+  position:absolute;
+  z-index:3;
+  width:84px;
+  height:84px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.09);
+  color:var(--text);
+  border:2px solid rgba(255,255,255,0.12);
+  font-size:2.4rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:transform .15s ease, background .15s ease;
+  backdrop-filter: blur(6px);
+}
+.banner-play:hover{ transform:scale(1.05); background:rgba(255,255,255,0.14) }
+.banner-play[hidden]{ display:none !important }
+
 .banner h1{
   font-family: "Montserrat", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
   font-weight:900;
