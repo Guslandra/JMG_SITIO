@@ -55,12 +55,18 @@
     <main>
 
       <section class="banner">
-        <video class="banner-video" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
+        <video class="banner-video" autoplay muted loop playsinline preload="metadata" poster="Imagenes/topography-813844_1920.jpg" aria-hidden="true">
+          <!-- Fuentes en distintos formatos para mejor compatibilidad -->
+          <source src="Imagenes/Itos.webm" type="video/webm">
           <source src="Imagenes/Itos.mp4" type="video/mp4">
-          Tu navegador no soporta video.
+          <source src="Imagenes/Itos.ogv" type="video/ogg">
+          <!-- Fallback: imagen y mensaje si no hay soporte de video -->
+          <img src="Imagenes/topography-813844_1920.jpg" alt="Imagen de banner - JMG" style="width:100%;height:auto;display:block">
+          <p>Tu navegador no soporta video. Puedes ver el contenido en una versión moderna de navegador o descargar el video <a href="Imagenes/Itos.mp4">aquí</a>.</p>
         </video>
         <div class="banner-content">
           <h1>JMG</h1>
+          <button class="banner-play" aria-label="Reproducir video" hidden>►</button>
         </div>
       </section>
 
@@ -326,6 +332,42 @@
                 window.addEventListener('resize', () => { checkbox.checked = false; });
               })();
         })();
+    </script>
+
+    <script>
+      // Fallback/play button para casos donde autoplay está bloqueado
+      (function(){
+        const video = document.querySelector('.banner-video');
+        const playBtn = document.querySelector('.banner-play');
+        if(!video || !playBtn) return;
+
+        function showPlay(){ playBtn.hidden = false; }
+        function hidePlay(){ playBtn.hidden = true; }
+
+        // Intento de autoplay (las promesas se rechazan si el navegador lo bloquea)
+        try{
+          const p = video.play();
+          if(p !== undefined){
+            p.then(()=>{ hidePlay(); }).catch(()=>{ showPlay(); });
+          }
+        }catch(e){ showPlay(); }
+
+        // Si ocurre un error al cargar, mostrar fallback
+        video.addEventListener('error', showPlay);
+
+        // Si el video comienza a reproducirse, ocultar el botón
+        video.addEventListener('play', hidePlay);
+
+        // Al click en el botón, reintentar reproducir y quitar mute si el usuario lo solicita
+        playBtn.addEventListener('click', ()=>{
+          // Permitir que el usuario active sonido si quiere (opcional)
+          if(video.muted){
+            // mantener silencioso la primera reproducción para evitar bloqueos, pero si ya es por acción del usuario podemos activar sonido
+            video.muted = false;
+          }
+          video.play().then(hidePlay).catch(()=>{ /* no hacer nada */ });
+        });
+      })();
     </script>
 
   </body>
